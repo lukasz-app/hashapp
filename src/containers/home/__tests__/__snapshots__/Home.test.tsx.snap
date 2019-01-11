@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with defaults 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "stretch",
+      "backgroundColor": "#FBFCFE",
+      "flex": 1,
+      "paddingHorizontal": 20,
+      "paddingTop": 30,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "stretch",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      autoFocus={true}
+      multiline={true}
+      numberOfLines={2}
+      onChangeText={[Function]}
+      placeholder="Enter text to be hashed"
+      returnKeyType="done"
+      style={
+        Object {
+          "flex": 4,
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+    <View
+      accessibilityRole="button"
+      accessibilityStates={Array []}
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {},
+          ]
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#007AFF",
+                "fontSize": 18,
+                "padding": 8,
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          Hash
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "flex": 1,
+        "marginTop": 8,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#427AA1",
+          "fontSize": 15,
+          "fontWeight": "600",
+        }
+      }
+    >
+      Some hash algorithm
+    </Text>
+    <View
+      style={
+        Object {
+          "alignSelf": "stretch",
+          "borderColor": "#427AA1",
+          "borderWidth": 1,
+          "flex": 1,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#01131A",
+            "fontSize": 18,
+            "fontWeight": "600",
+          }
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+</View>
+`;

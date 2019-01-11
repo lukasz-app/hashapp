@@ -2,12 +2,17 @@ import { StyleSheet } from 'react-native';
 import Colors from './Colors';
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
+    flex: 1,
+    alignSelf: 'stretch'
+  },
+  screenContainer: {
     flex: 1,
     alignSelf: 'stretch',
-    justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: Colors.white
+    backgroundColor: Colors.white,
+    paddingHorizontal: 20,
+    paddingTop: 30
   }
 });
 
