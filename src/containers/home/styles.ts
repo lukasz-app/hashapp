@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { AppStyles } from '../../global';
+import { AppStyles, Colors } from '../../global';
 
 export default StyleSheet.create({
   container: {
@@ -10,7 +10,11 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center'
   },
-  input: {
-    flex: 4
+  inputContainer: {
+    borderWidth: 1,
+    borderColor: Colors.nicel,
+    flex: 1,
+    borderRadius: 3,
+    marginRight: 6
   }
 });

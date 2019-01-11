@@ -3,7 +3,7 @@ import { AppStyles, Colors } from '../../global';
 
 export default StyleSheet.create({
   container: {
-    marginTop: 8,
+    marginTop: 10,
     flex: 1,
     alignSelf: 'stretch'
   },
@@ -11,7 +11,8 @@ export default StyleSheet.create({
     flex: 1,
     alignSelf: 'stretch',
     borderColor: Colors.queenBlue,
-    borderWidth: 1
+    borderWidth: 1,
+    borderRadius: 3
   },
   hash: {
     fontSize: 18,
@@ -21,6 +22,7 @@ export default StyleSheet.create({
   label: {
     fontSize: 15,
     fontWeight: '600',
-    color: Colors.queenBlue
+    color: Colors.queenBlue,
+    marginBottom: 6
   }
 });

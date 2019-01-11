@@ -6,7 +6,8 @@ const colors = {
   anitFlashWhite: '#EBF2FA',
   white: '#FBFCFE',
   maxGreen: '#679436',
-  limerick: '#A5BE00'
+  limerick: '#A5BE00',
+  silver: '#DDDDDD'
 };
 
 export default colors;
