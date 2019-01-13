@@ -37,8 +37,6 @@ export default class Hello extends Component<Props, State> {
               placeholder="Enter text to be hashed"
               autoFocus
               multiline
-              returnKeyType="done"
-              numberOfLines={2}
               onChangeText={this.onChangeText}
             />
           </View>

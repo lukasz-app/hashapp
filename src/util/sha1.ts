@@ -5,73 +5,27 @@
  *
  * */
 
-export default function SHA1(msg) {
-  function rotate_left(n, s) {
+import Utf8Encode from './utf8Encode';
+
+export default function SHA1(inputMessage: string): string {
+  function rotate_left(n: number, s: number) {
     const t4 = (n << s) | (n >>> (32 - s));
 
     return t4;
   }
 
-  function lsb_hex(val) {
+  function cvt_hex(val: number): string {
     let str = '';
 
-    let i;
+    let v: number;
 
-    let vh;
-
-    let vl;
-
-    for (i = 0; i <= 6; i += 2) {
-      vh = (val >>> (i * 4 + 4)) & 0x0f;
-
-      vl = (val >>> (i * 4)) & 0x0f;
-
-      str += vh.toString(16) + vl.toString(16);
-    }
-
-    return str;
-  }
-
-  function cvt_hex(val) {
-    let str = '';
-
-    let i;
-
-    let v;
-
-    for (i = 7; i >= 0; i--) {
+    for (let i = 7; i >= 0; i--) {
       v = (val >>> (i * 4)) & 0x0f;
 
       str += v.toString(16);
     }
 
     return str;
-  }
-
-  function Utf8Encode(string) {
-    string = string.replace(/\r\n/g, '\n');
-
-    let utftext = '';
-
-    for (let n = 0; n < string.length; n++) {
-      const c = string.charCodeAt(n);
-
-      if (c < 128) {
-        utftext += String.fromCharCode(c);
-      } else if (c > 127 && c < 2048) {
-        utftext += String.fromCharCode((c >> 6) | 192);
-
-        utftext += String.fromCharCode((c & 63) | 128);
-      } else {
-        utftext += String.fromCharCode((c >> 12) | 224);
-
-        utftext += String.fromCharCode(((c >> 6) & 63) | 128);
-
-        utftext += String.fromCharCode((c & 63) | 128);
-      }
-    }
-
-    return utftext;
   }
 
   let blockstart;
@@ -97,9 +51,9 @@ export default function SHA1(msg) {
   let D;
   let E;
 
-  var temp;
+  let temp;
 
-  msg = Utf8Encode(msg);
+  const msg = Utf8Encode(inputMessage);
 
   const msg_len = msg.length;
 
@@ -232,7 +186,7 @@ export default function SHA1(msg) {
     H4 = (H4 + E) & 0x0ffffffff;
   }
 
-  var temp = cvt_hex(H0) + cvt_hex(H1) + cvt_hex(H2) + cvt_hex(H3) + cvt_hex(H4);
+  const result = cvt_hex(H0) + cvt_hex(H1) + cvt_hex(H2) + cvt_hex(H3) + cvt_hex(H4);
 
-  return temp.toLowerCase();
+  return result.toLowerCase();
 }

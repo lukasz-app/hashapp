@@ -8,7 +8,6 @@ export default StyleSheet.create({
     alignSelf: 'stretch'
   },
   hashContainer: {
-    flex: 1,
     alignSelf: 'stretch',
     borderColor: Colors.queenBlue,
     borderWidth: 1,

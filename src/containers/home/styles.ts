@@ -8,13 +8,15 @@ export default StyleSheet.create({
   inputRowContainer: {
     alignSelf: 'stretch',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'stretch'
   },
   inputContainer: {
     borderWidth: 1,
     borderColor: Colors.nicel,
     flex: 1,
     borderRadius: 3,
-    marginRight: 6
+    marginRight: 6,
+    justifyContent: 'center',
+    paddingLeft: 2
   }
 });

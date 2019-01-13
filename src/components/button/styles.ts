@@ -6,7 +6,9 @@ export default StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 8,
     backgroundColor: Colors.maxGreen,
-    borderRadius: 3
+    borderRadius: 3,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   containerInactive: {
     backgroundColor: Colors.silver
