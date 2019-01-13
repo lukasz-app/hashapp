@@ -3,8 +3,7 @@ import { AppStyles, Colors } from '../../global';
 
 export default StyleSheet.create({
   container: {
-    marginTop: 10,
-    flex: 1,
+    marginTop: 16,
     alignSelf: 'stretch'
   },
   hashContainer: {

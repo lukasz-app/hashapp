@@ -3,23 +3,30 @@ import { View, TextInput } from 'react-native';
 import styles from './styles';
 import { HashView, Button } from '../../components';
 import SHA1 from '../../util/sha1';
+import SHA256 from '../../util/sha256';
 
 interface Props {}
 interface State {
   text: string;
   textHashed: string;
-  hash: string;
+  hashSHA1: string;
+  hashSHA256: string;
 }
 
 export default class Hello extends Component<Props, State> {
   state = {
     text: '',
-    hash: '',
+    hashSHA1: '',
+    hashSHA256: '',
     textHashed: ''
   };
 
   hashInput = () => {
-    this.setState({ hash: SHA1(this.state.text), textHashed: this.state.text });
+    this.setState({
+      hashSHA1: SHA1(this.state.text),
+      hashSHA256: SHA256(this.state.text),
+      textHashed: this.state.text
+    });
   };
 
   onChangeText = (text: string) => {
@@ -27,8 +34,7 @@ export default class Hello extends Component<Props, State> {
   };
 
   render() {
-    const { hash, text, textHashed } = this.state;
-    const hashViewLabel = `SHA1 hash for "${textHashed}"`;
+    const { hashSHA1, hashSHA256, text, textHashed } = this.state;
     return (
       <View style={styles.container}>
         <View style={styles.inputRowContainer}>
@@ -38,11 +44,15 @@ export default class Hello extends Component<Props, State> {
               autoFocus
               multiline
               onChangeText={this.onChangeText}
+              autoCapitalize="none"
             />
           </View>
           <Button label="Hash" onPress={this.hashInput} disabled={!text.length} />
         </View>
-        {!!hash.length && <HashView hash={hash} label={hashViewLabel} />}
+        {!!hashSHA1.length && <HashView hash={hashSHA1} label={`SHA1 hash for "${textHashed}"`} />}
+        {!!hashSHA256.length && (
+          <HashView hash={hashSHA256} label={`SHA256 hash for "${textHashed}"`} />
+        )}
       </View>
     );
   }

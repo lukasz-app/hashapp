@@ -3,6 +3,8 @@
  *  Secure Hash Algorithm (SHA1)
  *  http://www.webtoolkit.info/
  *
+ *  with changes by Lukasz Chludzinski
+ *
  * */
 
 import Utf8Encode from './utf8Encode';

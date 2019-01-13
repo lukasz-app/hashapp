@@ -38,12 +38,11 @@ exports[`renders correctly 1`] = `
     >
       <TextInput
         allowFontScaling={true}
+        autoCapitalize="none"
         autoFocus={true}
         multiline={true}
-        numberOfLines={2}
         onChangeText={[Function]}
         placeholder="Enter text to be hashed"
-        returnKeyType="done"
         underlineColorAndroid="transparent"
       />
     </View>
