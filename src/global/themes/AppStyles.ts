@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: Colors.white,
     paddingHorizontal: 20,
-    paddingTop: getStatusBarHeight() + 30,
+    paddingTop: 20,
     paddingBottom: getBottomSpace() + 20
   }
 });

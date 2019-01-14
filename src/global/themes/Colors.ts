@@ -7,7 +7,11 @@ const colors = {
   white: '#FBFCFE',
   maxGreen: '#679436',
   limerick: '#A5BE00',
-  silver: '#DDDDDD'
+  silver: '#DDDDDD',
+  darkBlue: '#08415C',
+  platinum: '#EEE5E9',
+  slateGrey: '#6B818C',
+  redAccent: '#CC2936'
 };
 
 export default colors;

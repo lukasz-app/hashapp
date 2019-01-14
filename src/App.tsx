@@ -1,13 +1,40 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StatusBar } from 'react-native';
 import { AppStyles } from './global';
 import { Home } from './containers';
+import { Header, Options } from './components';
 
-export default class App extends Component {
+interface State {
+  optionsExpanded: boolean;
+  hashOnType: boolean;
+}
+
+export default class App extends Component<{}, State> {
+  state = {
+    optionsExpanded: false,
+    hashOnType: false
+  };
+
+  onMorePressed = () => {
+    this.setState(({ optionsExpanded }) => ({ optionsExpanded: !optionsExpanded }));
+  };
+
+  hashOnTypeChanged = () => {
+    this.setState(({ hashOnType }) => ({ hashOnType: !hashOnType }));
+  };
+
   render() {
+    const { optionsExpanded, hashOnType } = this.state;
     return (
       <View style={AppStyles.root}>
-        <Home />
+        <StatusBar translucent barStyle="light-content" />
+        <Header onMorePressed={this.onMorePressed} />
+        <Options
+          expanded={optionsExpanded}
+          hashOnType={hashOnType}
+          hashOnTypeChanged={this.hashOnTypeChanged}
+        />
+        <Home hashOnType={hashOnType} />
       </View>
     );
   }
